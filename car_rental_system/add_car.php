@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'db.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -17,6 +18,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($result->num_rows > 0) {
         echo "Error: Car or Plate ID already exists in the database.";
+        $_SESSION['error'] = "Error: Car or Plate ID already exists in the database";
+        header("Location: car_management.php");
+        exit;
     } else {
         $insert_sql = "INSERT INTO car (car_id, model, year, plate_id, status, office_id) 
                        VALUES (?, ?, ?, ?, ?, ?)";
@@ -25,12 +29,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         if ($stmt->execute()) {
             echo "New car registered successfully!";
+            $_SESSION['success'] = "Car added successfully!";
         } else {
             echo "Error: " . $stmt->error;
+            $_SESSION['error'] = "Error adding car: " . $conn->error;
+
         }
     }
-
     $stmt->close();
     $conn->close();
+    header("Location: car_management.php");
+    exit;
 }
 ?>
