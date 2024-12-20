@@ -2,12 +2,12 @@
 include 'db.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $car_id = $_POST['car_id'];
-    $model = $_POST['model'];
-    $year = $_POST['year'];
-    $plate_id = $_POST['plate_id'];
-    $status = $_POST['status'];
-    $office_id = $_POST['office_id'];
+    $car_id = $_POST['car_id_add'];
+    $model = $_POST['model_add'];
+    $year = $_POST['year_add'];
+    $plate_id = $_POST['plate_id_add'];
+    $status = $_POST['status_add'];
+    $office_id = $_POST['office_id_add'];
 
     $check_sql = "SELECT * FROM car WHERE car_id = ? OR plate_id = ?";
     $stmt = $conn->prepare($check_sql);
