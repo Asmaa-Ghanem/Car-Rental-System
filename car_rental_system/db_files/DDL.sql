@@ -11,9 +11,19 @@ CREATE TABLE car(
     PRIMARY KEY(car_id)
 );
 
+CREATE TABLE admin (
+    admin_id INT AUTO_INCREMENT,
+    username VARCHAR(255) UNIQUE NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    created_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY(admin_id)
+);
+
 CREATE TABLE customer(
     customer_id INT AUTO_INCREMENT,
     name VARCHAR(255),
+    password VARCHAR(255) NOT NULL,
     email VARCHAR(255),
     phone VARCHAR(255),
     address VARCHAR(255),

@@ -6,12 +6,17 @@ car_models = ["Toyota Corolla", "Honda Civic", "Ford Focus", "Tesla Model 3", "C
 statuses = ["ACTIVE", "OUT OF SERVICE", "RENTED", "RESERVED"]
 locations = ["New York", "Los Angeles", "Chicago", "Houston", "Phoenix"]
 names = ["John Doe", "Jane Smith", "Alice Johnson", "Bob Brown", "Charlie Davis"]
+admin_names = ["Admin1", "Admin2", "Admin3"]
 
 # Helper function to generate random datetime
 def random_datetime(start, end):
     delta = end - start
-    random_seconds = random.randint(0, delta.total_seconds())
+    random_seconds = random.randint(0, int(delta.total_seconds()))
     return start + timedelta(seconds=random_seconds)
+
+# Helper function to generate a simple password
+def generate_simple_password():
+    return "".join(random.choices("abcdef123456", k=6))  # 6-character password with letters and numbers
 
 # Generate SQL commands
 def generate_sql():
@@ -44,7 +49,16 @@ def generate_sql():
         email = name.lower().replace(" ", "_") + "@example.com"
         phone = f"555-{random.randint(1000, 9999)}"
         address = f"{random.randint(100, 999)} Main St"
-        sql_commands.append(f"INSERT INTO customer (customer_id, name, email, phone, address) VALUES ({customer_id}, '{name}', '{email}', '{phone}', '{address}');")
+        password = generate_simple_password()  # Generate a simple password
+        sql_commands.append(f"INSERT INTO customer (customer_id, name, email, phone, address, password) VALUES ({customer_id}, '{name}', '{email}', '{phone}', '{address}', '{password}');")
+
+    # Admin entries
+    sql_commands.append("-- Admin Entries")
+    for admin_id, admin_name in enumerate(admin_names, start=1):
+        username = admin_name.lower()
+        email = f"{username}@admin.com"
+        password = generate_simple_password()  # Generate a simple password
+        sql_commands.append(f"INSERT INTO admin (admin_id, username, email, password) VALUES ({admin_id}, '{username}', '{email}', '{password}');")
 
     # Reservation entries
     sql_commands.append("-- Reservation Entries")
