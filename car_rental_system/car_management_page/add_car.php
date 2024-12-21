@@ -1,4 +1,5 @@
 <?php
+header('Content-Type: application/json');
 session_start();
 include 'db.php';
 
@@ -17,9 +18,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
-        echo "Error: Car or Plate ID already exists in the database.";
-        $_SESSION['error'] = "Error: Car or Plate ID already exists in the database";
-        header("Location: car_management.php");
+        // echo "Error: Car or Plate ID already exists in the database.";
+        echo json_encode([
+            "success" => false,
+            "message" => "Car or Plate ID already exists in the database."
+        ]);
         exit;
     } else {
         $insert_sql = "INSERT INTO car (car_id, model, year, plate_id, status, office_id) 
@@ -28,17 +31,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->bind_param("isissi", $car_id, $model, $year, $plate_id, $status, $office_id);
 
         if ($stmt->execute()) {
-            echo "New car registered successfully!";
-            $_SESSION['success'] = "Car added successfully!";
+            // echo "New car registered successfully!";
+            echo json_encode([
+                "success" => true,
+                "message" => "Car added successfully!"
+            ]);
         } else {
-            echo "Error: " . $stmt->error;
-            $_SESSION['error'] = "Error adding car: " . $conn->error;
+            // echo "Error: " . $stmt->error;
+            echo json_encode([
+                "success" => false,
+                "message" => "Error adding car: " . $conn->error
+            ]);
 
         }
     }
     $stmt->close();
     $conn->close();
-    header("Location: car_management.php");
     exit;
 }
 ?>

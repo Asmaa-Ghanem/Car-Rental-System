@@ -1,4 +1,5 @@
 <?php
+header('Content-Type: application/json');
 session_start();
 include 'db.php';
 
@@ -17,9 +18,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $result = $stmt->get_result();
 
     if ($result->num_rows == 0) {
-        echo "Error: No car found with the provided Car ID.";
-        $_SESSION['error'] = "Error: No car found with the provided Car ID.";
-        header("Location: car_management.php");
+        // echo "Error: No car found with the provided Car ID.";
+        echo json_encode([
+            "success" => false,
+            "message" => "Error: No car found with the provided Car ID."
+        ]);
         exit;
     } else {
         $fields = [];
@@ -61,21 +64,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $stmt->bind_param($types, ...$params);
 
             if ($stmt->execute()) {
-                echo "Car details updated successfully!";
-                $_SESSION['success'] = "Car updated successfully!";
+                // echo "Car details updated successfully!";
+                echo json_encode([
+                    "success" => true,
+                    "message" => "Car details updated successfully!"
+                ]);
             } else {
-                echo "Error: " . $stmt->error;
-                $_SESSION['error'] = "Error: " . $stmt->error;
+                // echo "Error: " . $stmt->error;
+                echo json_encode([
+                    "success" => false,
+                    "message" => "Error:  $stmt->error"
+                ]);
             }
         } else {
-            echo "Error: No fields provided to update.";
-            $_SESSION['error'] = "Error: No fields provided to update.";
-
+            // echo "Error: No fields provided to update.";
+            echo json_encode([
+                "success" => false,
+                "message" => "Error: No fields provided to update."
+            ]);
         }
     }
-    header("Location: car_management.php");
-    exit;
     $stmt->close();
     $conn->close();
+    exit;
 }
 ?>
