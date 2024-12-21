@@ -1,0 +1,22 @@
+/* AS A REFERENCE */
+/* APPLYING THE GENERAL DESIGN SYSTEM */
+
+body {
+    font-size: 14px;
+}
+
+.form-container {
+    padding: 15px;
+}
+.form-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+.form-label {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+.btn {
+    font-size: 12px;
+    padding: 5px 10px;
+}
