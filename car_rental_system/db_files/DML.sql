@@ -25,11 +25,15 @@ INSERT INTO car (car_id, model, year, plate_id, status, office_id) VALUES (18, '
 INSERT INTO car (car_id, model, year, plate_id, status, office_id) VALUES (19, 'Toyota Corolla', 2004, 'PLATE-019', 'OUT OF SERVICE', 5);
 INSERT INTO car (car_id, model, year, plate_id, status, office_id) VALUES (20, 'Honda Civic', 2017, 'PLATE-020', 'RENTED', 1);
 
-INSERT INTO customer (customer_id, name, email, phone, address) VALUES (1, 'John Doe', 'john_doe@example.com', '555-8946', '315 Main St');
-INSERT INTO customer (customer_id, name, email, phone, address) VALUES (2, 'Jane Smith', 'jane_smith@example.com', '555-9546', '907 Main St');
-INSERT INTO customer (customer_id, name, email, phone, address) VALUES (3, 'Alice Johnson', 'alice_johnson@example.com', '555-8636', '516 Main St');
-INSERT INTO customer (customer_id, name, email, phone, address) VALUES (4, 'Bob Brown', 'bob_brown@example.com', '555-7141', '667 Main St');
-INSERT INTO customer (customer_id, name, email, phone, address) VALUES (5, 'Charlie Davis', 'charlie_davis@example.com', '555-6108', '943 Main St');
+INSERT INTO admin (admin_id, username, email, password) VALUES (1, 'admin1', 'admin1@admin.com', 'password1');
+INSERT INTO admin (admin_id, username, email, password) VALUES (2, 'admin2', 'admin2@admin.com', 'password2');
+INSERT INTO admin (admin_id, username, email, password) VALUES (3, 'admin3', 'admin3@admin.com', 'password3');
+
+INSERT INTO customer (customer_id, name, email, phone, address, password) VALUES (1, 'John Doe', 'john_doe@example.com', '555-8946', '315 Main St', 'pass1');
+INSERT INTO customer (customer_id, name, email, phone, address, password) VALUES (2, 'Jane Smith', 'jane_smith@example.com', '555-9546', '907 Main St', 'pass2');
+INSERT INTO customer (customer_id, name, email, phone, address, password) VALUES (3, 'Alice Johnson', 'alice_johnson@example.com', '555-8636', '516 Main St', 'pass3');
+INSERT INTO customer (customer_id, name, email, phone, address, password) VALUES (4, 'Bob Brown', 'bob_brown@example.com', '555-7141', '667 Main St', 'pass4');
+INSERT INTO customer (customer_id, name, email, phone, address, password) VALUES (5, 'Charlie Davis', 'charlie_davis@example.com', '555-6108', '943 Main St', 'pass5');
 
 INSERT INTO reservation (reservation_id, customer_id, car_id, start_date, end_date, status, payment_amount) VALUES (1, 1, 16, '2023-12-03 20:34:36', '2023-11-15 03:45:08', 'COMPLETED', 200.59);
 INSERT INTO reservation (reservation_id, customer_id, car_id, start_date, end_date, status, payment_amount) VALUES (2, 4, 20, '2023-09-28 21:55:18', '2023-08-26 05:23:52', 'CONFIRMED', 483.56);
