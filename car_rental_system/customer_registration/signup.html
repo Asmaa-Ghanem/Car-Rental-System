@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html LANG='en'>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarQuest - Sign Up</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="registration-styles.css" rel="stylesheet">
+    <script>
+
+        function validateEmail(email) {
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Valid email format
+            return emailPattern.test(email);
+        }
+
+        function validateForm() {
+            const name = document.querySelector('input[name="name"]').value.trim();
+            const email = document.querySelector('input[name="email"]').value.trim();
+            const phone = document.querySelector('input[name="phone"]').value.trim();
+            const address = document.querySelector('input[name="address"]').value.trim();
+            const password = document.querySelector('input[name="password"]').value;
+            const confirmPassword = document.querySelector('input[name="confirm-password"]').value;
+
+            if (!name) {
+                alert("Name can't be empty!");
+                return false;
+            }
+
+            if (!email) {
+                alert("Email can't be empty!");
+                return false;
+            }
+            if (!validateEmail(email)) {
+                alert("Please enter a valid email address!");
+                return false;
+            }
+
+            if (!phone) {
+                alert("Phone number can't be empty!");
+                return false;
+            }
+            if (!/^\d{11}$/.test(phone)) {
+                alert("Phone number must be 11 digits!");
+                return false;
+            }
+
+            if (!address) {
+                alert("Address can't be empty!");
+                return false;
+            }
+
+            if (!password) {
+                alert("Password can't be empty!");
+                return false;
+            }
+            if (password.length < 8) {
+                alert("Password must be at least 8 characters long!");
+                return false;
+            }
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+                return false;
+            }
+
+            return true;
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <div class="container">
+        <h2>Sign Up</h2>
+        <form action="/signup.php" method="POST" onsubmit="return validateForm()">
+            <label for="name">Name: </label>
+            <input type="text" name="name" placeholder="Enter name">
+
+            <label for="email">Email: </label>
+            <input type="email" name="email" placeholder="Enter e-mail">
+
+            <label for="phone">Phone Number: </label>
+            <input type="tel" name="phone" placeholder="Enter phone number" pattern="[0-9]{11}" required>
+
+            <label for="address">Address: </label>
+            <input type="text" name="address" placeholder="Enter address">
+
+            <label for="password">Password: </label>
+            <input type="password" name="password" placeholder="Enter password">
+
+            <label for="confirm-password">Confirm Password: </label>
+            <input type="password" name="confirm-password" placeholder="Confirm Password">
+
+            <button type="submit">Register</button>
+
+        </form>
+    </div>
+</body>
+
+</html>
