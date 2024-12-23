@@ -8,6 +8,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    
 
 }
 
@@ -31,4 +32,8 @@ button {
 
 button:hover {
     background-color: #a27b5c;
+}
+
+header, footer {
+    background-color: #3f4e4f;
 }

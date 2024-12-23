@@ -1,0 +1,53 @@
+/* HOME PAGE DESIGN SYSTEM */
+
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main, header, footer {
+    width: 100%;
+}
+button.btn {
+    color: #ffffff;
+    background-color: #3f4e4f;
+}
+
+button.btn:hover {
+    background-color: #a27b5c;
+}
+
+.nav-link {
+    color: #ffffff;
+}
+
+.contact {
+    margin-bottom: auto;
+}
+
+main {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 20px;
+}
+
+footer {
+    height: 50px; /* Set a fixed height */
+}
+
+/* .car-img {
+    text-align: center;
+    margin: 20px 0; 
+}
+
+.car-img img {
+    display: inline-block; 
+    max-width: 75%;
+    height: auto;
+    border-radius: 10px; 
+} */
+
+
+
