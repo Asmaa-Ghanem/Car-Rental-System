@@ -8,10 +8,13 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $car_id = $_POST['car_id_add'];
     $model = $_POST['model_add'];
+    $color = $_POST['color_add'];
+    $size = $_POST['size_add'];
     $year = $_POST['year_add'];
     $plate_id = $_POST['plate_id_add'];
     $status = $_POST['status_add'];
     $office_id = $_POST['office_id_add'];
+    $price = $_POST['price_add'];
 
     try {
         $check_sql = "SELECT * FROM car WHERE car_id = ? OR plate_id = ?";
@@ -28,10 +31,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             exit;
         }
 
-        $insert_sql = "INSERT INTO car (car_id, model, year, plate_id, status, office_id) 
-                       VALUES (?, ?, ?, ?, ?, ?)";
+        $insert_sql = "INSERT INTO car (car_id, model, color, size, year, plate_id, status, office_id, price_per_day) 
+                       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $conn->prepare($insert_sql);
-        $stmt->bind_param("isissi", $car_id, $model, $year, $plate_id, $status, $office_id);
+        $stmt->bind_param("isssissid", $car_id, $model, $color, $size, $year, $plate_id, $status, $office_id, $price);
 
         if ($stmt->execute()) {
             echo json_encode([
