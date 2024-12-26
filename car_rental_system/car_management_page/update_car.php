@@ -8,10 +8,13 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $car_id = $_POST['car_id_update'];
     $model = $_POST['model_update'] ?? null;
+    $color = $_POST['color_update'] ?? null;
+    $size = $_POST['size_update'] ?? null;
     $year = $_POST['year_update'] ?? null;
     $plate_id = $_POST['plate_id_update'] ?? null;
     $status = $_POST['status_update'] ?? null;
     $office_id = $_POST['office_id_update'] ?? null;
+    $price = $_POST['price_update'] ?? null;
 
     try {
         $check_sql = "SELECT * FROM car WHERE car_id = ?";
@@ -37,6 +40,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $params[] = $model;
             $types .= "s";
         }
+        if (!empty($color)) {
+            $fields[] = "color = ?";
+            $params[] = $color;
+            $types .= "s";
+        }
+        if (!empty($size)) {
+            $fields[] = "size = ?";
+            $params[] = $size;
+            $types .= "s";
+        }
         if (!empty($year)) {
             $fields[] = "year = ?";
             $params[] = $year;
@@ -56,6 +69,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $fields[] = "office_id = ?";
             $params[] = $office_id;
             $types .= "i";
+        }
+        if (!empty($price)) {
+            $fields[] = "price_per_day = ?";
+            $params[] = $price;
+            $types .= "d";
         }
 
         if (count($fields) > 0) {
