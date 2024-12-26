@@ -1,49 +1,56 @@
 document.getElementById('addCarForm').addEventListener('submit', async (e) => {
     e.preventDefault(); // Prevent form from refreshing the page
     
-    // Collect form data
-    const formData = new FormData(e.target);
-    const response = await fetch('add_car.php', {
-        method: 'POST',
-        body: formData
-    });
+    if(validateAddCarForm() === true){
+        // Collect form data
+        const formData = new FormData(e.target);
+        const response = await fetch('add_car.php', {
+            method: 'POST',
+            body: formData
+        });
 
-    const result = await response.json();
+        const result = await response.json();
 
-    // Display the alert message
-    const alertContainer = document.getElementById('alert-container');
-    alertContainer.innerHTML = `
-        <div class="alert alert-${result.success ? 'success' : 'danger'}">
-            ${result.message}
-        </div>
-    `;
+        // Display the alert message
+        const alertContainer = document.getElementById('alert-container');
+        alertContainer.innerHTML = `
+            <div class="alert alert-${result.success ? 'success' : 'danger'}">
+                ${result.message}
+            </div>
+        `;
 
-    if (result.success) {
-        e.target.reset(); // Clear the form on success
+        if (result.success) {
+            e.target.reset(); // Clear the form on success
+        }
     }
+    
 });
 
 document.getElementById('updateCarForm').addEventListener('submit', async (e) => {
     e.preventDefault();
-    
-    const formData = new FormData(e.target);
-    const response = await fetch('update_car.php', {
-        method: 'POST',
-        body: formData
-    });
 
-    const result = await response.json();
+    if(validateUpdateCarForm() === true){
+        const formData = new FormData(e.target);
+        const response = await fetch('update_car.php', {
+            method: 'POST',
+            body: formData
+        });
 
-    const alertContainer = document.getElementById('alert-container');
-    alertContainer.innerHTML = `
-        <div class="alert alert-${result.success ? 'success' : 'danger'}">
-            ${result.message}
-        </div>
-    `;
+        const result = await response.json();
 
-    if (result.success) {
-        e.target.reset();
+        const alertContainer = document.getElementById('alert-container');
+        alertContainer.innerHTML = `
+            <div class="alert alert-${result.success ? 'success' : 'danger'}">
+                ${result.message}
+            </div>
+        `;
+
+        if (result.success) {
+            e.target.reset();
+        }
     }
+    
+    
 });
 
 function validateAddCarForm() {
@@ -57,7 +64,7 @@ function validateAddCarForm() {
     document.getElementById('officeIdError').textContent = '';
     
     const carId = document.getElementById('car_id_add').value.trim();
-    if (carId === '') {
+    if (carId === '' || carId <= 0) {
         document.getElementById('carIdError').textContent = 'Car ID is required.';
         isValid = false;
     }
