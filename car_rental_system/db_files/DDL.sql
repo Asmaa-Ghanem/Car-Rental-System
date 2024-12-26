@@ -4,10 +4,13 @@ USE car_rental_system;
 CREATE TABLE car(
     car_id INT AUTO_INCREMENT,
     model VARCHAR(255) NOT NULL,
+    color VARCHAR(255) NOT NULL,
+    size VARCHAR(255) NOT NULL,
     year INT NOT NULL,
     plate_id VARCHAR(255) UNIQUE NOT NULL,
     status ENUM('ACTIVE', 'OUT OF SERVICE', 'RENTED', 'RESERVED') NOT NULL,
     office_id INT NOT NULL,
+    price_per_day DECIMAL(10,2),
     PRIMARY KEY(car_id)
 );
 
