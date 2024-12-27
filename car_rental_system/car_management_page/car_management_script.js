@@ -1,56 +1,73 @@
-document.getElementById('addCarForm').addEventListener('submit', async (e) => {
+document.getElementById('addCarForm').addEventListener('submit', function (e) {
     e.preventDefault(); // Prevent form from refreshing the page
-    
-    if(validateAddCarForm() === true){
-        // Collect form data
-        const formData = new FormData(e.target);
-        const response = await fetch('add_car.php', {
-            method: 'POST',
-            body: formData
-        });
 
-        const result = await response.json();
+    if (validateAddCarForm() === true) {
+        var formData = new FormData(this);
 
-        // Display the alert message
-        const alertContainer = document.getElementById('alert-container');
-        alertContainer.innerHTML = `
-            <div class="alert alert-${result.success ? 'success' : 'danger'}">
-                ${result.message}
-            </div>
-        `;
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'add_car.php', true);
 
-        if (result.success) {
-            e.target.reset(); // Clear the form on success
-        }
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                // Parse the response JSON
+                var result = JSON.parse(xhr.responseText);
+
+                // Display the alert message
+                var alertContainer = document.getElementById('alert-container');
+                alertContainer.innerHTML = `
+                    <div class="alert alert-${result.success ? 'success' : 'danger'}">
+                        ${result.message}
+                    </div>
+                `;
+
+                if (result.success) {
+                    e.target.reset(); // Clear the form on success
+                }
+            } else {
+                console.error('Error: ' + xhr.statusText);
+            }
+        };
+
+        xhr.onerror = function () {
+            console.error('Request failed');
+        };
+
+        xhr.send(formData);
     }
-    
 });
 
-document.getElementById('updateCarForm').addEventListener('submit', async (e) => {
+document.getElementById('updateCarForm').addEventListener('submit', function (e) {
     e.preventDefault();
 
-    if(validateUpdateCarForm() === true){
-        const formData = new FormData(e.target);
-        const response = await fetch('update_car.php', {
-            method: 'POST',
-            body: formData
-        });
+    if (validateUpdateCarForm() === true) {
+        var formData = new FormData(this);
 
-        const result = await response.json();
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'update_car.php', true);
 
-        const alertContainer = document.getElementById('alert-container');
-        alertContainer.innerHTML = `
-            <div class="alert alert-${result.success ? 'success' : 'danger'}">
-                ${result.message}
-            </div>
-        `;
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                var result = JSON.parse(xhr.responseText);
 
-        if (result.success) {
-            e.target.reset();
-        }
+                var alertContainer = document.getElementById('alert-container');
+                alertContainer.innerHTML = `
+                    <div class="alert alert-${result.success ? 'success' : 'danger'}">
+                        ${result.message}
+                    </div>
+                `;
+
+                if (result.success) {
+                    e.target.reset();
+                }
+            } else {
+                console.error('Error: ' + xhr.statusText);
+            }
+        };
+        xhr.onerror = function () {
+            console.error('Request failed');
+        };
+        xhr.send(formData);
     }
-    
-    
 });
 
 function validateAddCarForm() {
