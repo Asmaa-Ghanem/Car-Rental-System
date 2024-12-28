@@ -1,0 +1,8 @@
+# several drop down lists for each search option
+# search options (car specs):
+    - car model
+    - colour
+    - size 
+    - price/day (what's the max value?)
+
+# 

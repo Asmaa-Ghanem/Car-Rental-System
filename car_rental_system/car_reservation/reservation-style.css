@@ -1,0 +1,24 @@
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+} */
+
+.container{
+    align-self: center;
+}
+.search-bar{
+    background: #fff;
+    width: 200%;
+    max-width: 1000px;
+    display: flex;
+    padding: 3px;
+    border-radius: 4px;
+    align-items:center ;
+}
+
+.form-control{
+    width:max-content;
+    position: static;
+}
