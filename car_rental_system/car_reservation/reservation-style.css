@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.search-bar{
+    background: #fff;
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    padding: 2px;
+    border-radius: 4px;
+    align-self: center;
+
+}
+#select{
+    background-color:#3F4E4F ;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    color: #fff;
+    width: 300px;
+    padding: 25px 20px;
+    cursor:grab;
+}
+
+#select ul{
+    position: relative;
+    top:120%;
+    left:0;
+    list-style-type:none;
+    background: #dae2e3;
+    color: black;
+    width: 100%;
+    border-radius: 4px;
+
+}
