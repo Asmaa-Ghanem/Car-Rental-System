@@ -8,7 +8,7 @@ CREATE TABLE car(
     size VARCHAR(255) NOT NULL,
     year INT NOT NULL,
     plate_id VARCHAR(255) UNIQUE NOT NULL,
-    status ENUM('ACTIVE', 'OUT OF SERVICE', 'RENTED', 'RESERVED') NOT NULL,
+    status ENUM('ACTIVE', 'OUT OF SERVICE', 'RENTED') NOT NULL,
     office_id INT NOT NULL,
     price_per_day DECIMAL(10,2),
     PRIMARY KEY(car_id)
@@ -40,7 +40,6 @@ CREATE TABLE reservation(
     car_id INT NOT NULL,
     start_date DATETIME,
     end_date DATETIME,
-    status VARCHAR(255),
     payment_amount DECIMAL(10, 2),
     PRIMARY KEY(reservation_id)
 );
@@ -58,6 +57,8 @@ CREATE TABLE payment(
     reservation_id INT NOT NULL,
     payment_date DATETIME NOT NULL,
     amount DECIMAL(10, 2),
+    card_id VARCHAR(16),
+    card_cvv VARCHAR(3),
     PRIMARY KEY(payment_id)
 );
 
