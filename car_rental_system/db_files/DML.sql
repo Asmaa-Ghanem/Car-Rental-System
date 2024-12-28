@@ -4,26 +4,27 @@ INSERT INTO office (office_id, name, location, contact_info) VALUES (3, 'Office 
 INSERT INTO office (office_id, name, location, contact_info) VALUES (4, 'Office 4', 'Houston', 'contact4@example.com');
 INSERT INTO office (office_id, name, location, contact_info) VALUES (5, 'Office 5', 'Phoenix', 'contact5@example.com');
 
-INSERT INTO car (car_id, model, year, plate_id, status, office_id) VALUES (1, 'Toyota Corolla', 2009, 'PLATE-001', 'RESERVED', 1);
-INSERT INTO car (car_id, model, year, plate_id, status, office_id) VALUES (2, 'Toyota Corolla', 2005, 'PLATE-002', 'ACTIVE', 2);
-INSERT INTO car (car_id, model, year, plate_id, status, office_id) VALUES (3, 'Tesla Model 3', 2008, 'PLATE-003', 'RENTED', 1);
-INSERT INTO car (car_id, model, year, plate_id, status, office_id) VALUES (4, 'Ford Focus', 2013, 'PLATE-004', 'RESERVED', 2);
-INSERT INTO car (car_id, model, year, plate_id, status, office_id) VALUES (5, 'Ford Focus', 2015, 'PLATE-005', 'RENTED', 5);
-INSERT INTO car (car_id, model, year, plate_id, status, office_id) VALUES (6, 'Tesla Model 3', 2003, 'PLATE-006', 'OUT OF SERVICE', 5);    
-INSERT INTO car (car_id, model, year, plate_id, status, office_id) VALUES (7, 'Honda Civic', 2006, 'PLATE-007', 'OUT OF SERVICE', 2);      
-INSERT INTO car (car_id, model, year, plate_id, status, office_id) VALUES (8, 'Ford Focus', 2022, 'PLATE-008', 'ACTIVE', 2);
-INSERT INTO car (car_id, model, year, plate_id, status, office_id) VALUES (9, 'Honda Civic', 2007, 'PLATE-009', 'RESERVED', 3);
-INSERT INTO car (car_id, model, year, plate_id, status, office_id) VALUES (10, 'Chevrolet Malibu', 2018, 'PLATE-010', 'OUT OF SERVICE', 4);
-INSERT INTO car (car_id, model, year, plate_id, status, office_id) VALUES (11, 'Ford Focus', 2020, 'PLATE-011', 'OUT OF SERVICE', 1);      
-INSERT INTO car (car_id, model, year, plate_id, status, office_id) VALUES (12, 'Tesla Model 3', 2016, 'PLATE-012', 'RENTED', 2);
-INSERT INTO car (car_id, model, year, plate_id, status, office_id) VALUES (13, 'Toyota Corolla', 2015, 'PLATE-013', 'ACTIVE', 5);
-INSERT INTO car (car_id, model, year, plate_id, status, office_id) VALUES (14, 'Ford Focus', 2010, 'PLATE-014', 'RESERVED', 5);
-INSERT INTO car (car_id, model, year, plate_id, status, office_id) VALUES (15, 'Toyota Corolla', 2022, 'PLATE-015', 'ACTIVE', 5);
-INSERT INTO car (car_id, model, year, plate_id, status, office_id) VALUES (16, 'Tesla Model 3', 2008, 'PLATE-016', 'OUT OF SERVICE', 2);
-INSERT INTO car (car_id, model, year, plate_id, status, office_id) VALUES (17, 'Ford Focus', 2011, 'PLATE-017', 'ACTIVE', 2);
-INSERT INTO car (car_id, model, year, plate_id, status, office_id) VALUES (18, 'Honda Civic', 2007, 'PLATE-018', 'RENTED', 4);
-INSERT INTO car (car_id, model, year, plate_id, status, office_id) VALUES (19, 'Toyota Corolla', 2004, 'PLATE-019', 'OUT OF SERVICE', 5);
-INSERT INTO car (car_id, model, year, plate_id, status, office_id) VALUES (20, 'Honda Civic', 2017, 'PLATE-020', 'RENTED', 1);
+INSERT INTO car (car_id, model, color, size, year, plate_id, status, office_id, price_per_day) VALUES (1, 'Ford Focus', 'Black', 'Large', 2010, 'PLATE-001', 'RESERVED', 4, 
+139.98);
+INSERT INTO car (car_id, model, color, size, year, plate_id, status, office_id, price_per_day) VALUES (2, 'Honda Civic', 'Blue', 'Small', 2014, 'PLATE-002', 'RENTED', 3, 56.36);
+INSERT INTO car (car_id, model, color, size, year, plate_id, status, office_id, price_per_day) VALUES (3, 'Chevrolet Malibu', 'Blue', 'Medium', 2005, 'PLATE-003', 'ACTIVE', 4, 146.8);
+INSERT INTO car (car_id, model, color, size, year, plate_id, status, office_id, price_per_day) VALUES (4, 'Ford Focus', 'White', 'Medium', 2008, 'PLATE-004', 'ACTIVE', 3, 143.09);
+INSERT INTO car (car_id, model, color, size, year, plate_id, status, office_id, price_per_day) VALUES (5, 'Ford Focus', 'Silver', 'Medium', 2015, 'PLATE-005', 'OUT OF SERVICE', 3, 122.18);
+INSERT INTO car (car_id, model, color, size, year, plate_id, status, office_id, price_per_day) VALUES (6, 'Honda Civic', 'White', 'Small', 2006, 'PLATE-006', 'RESERVED', 3, 123.97);
+INSERT INTO car (car_id, model, color, size, year, plate_id, status, office_id, price_per_day) VALUES (7, 'Tesla Model 3', 'White', 'Small', 2022, 'PLATE-007', 'OUT OF SERVICE', 4, 109.75);
+INSERT INTO car (car_id, model, color, size, year, plate_id, status, office_id, price_per_day) VALUES (8, 'Toyota Corolla', 'Silver', 'Medium', 2001, 'PLATE-008', 'RESERVED', 3, 85.3);
+INSERT INTO car (car_id, model, color, size, year, plate_id, status, office_id, price_per_day) VALUES (9, 'Tesla Model 3', 'Black', 'Small', 2012, 'PLATE-009', 'ACTIVE', 1, 141.31);
+INSERT INTO car (car_id, model, color, size, year, plate_id, status, office_id, price_per_day) VALUES (10, 'Ford Focus', 'White', 'Small', 2010, 'PLATE-010', 'ACTIVE', 1, 65.92);
+INSERT INTO car (car_id, model, color, size, year, plate_id, status, office_id, price_per_day) VALUES (11, 'Ford Focus', 'Blue', 'Small', 2009, 'PLATE-011', 'RESERVED', 3, 120.8);
+INSERT INTO car (car_id, model, color, size, year, plate_id, status, office_id, price_per_day) VALUES (12, 'Chevrolet Malibu', 'White', 'Medium', 2005, 'PLATE-012', 'RESERVED', 2, 102.45);
+INSERT INTO car (car_id, model, color, size, year, plate_id, status, office_id, price_per_day) VALUES (13, 'Ford Focus', 'Blue', 'Small', 2023, 'PLATE-013', 'RESERVED', 3, 75.24);
+INSERT INTO car (car_id, model, color, size, year, plate_id, status, office_id, price_per_day) VALUES (14, 'Chevrolet Malibu', 'Red', 'Medium', 2017, 'PLATE-014', 'RESERVED', 1, 60.33);
+INSERT INTO car (car_id, model, color, size, year, plate_id, status, office_id, price_per_day) VALUES (15, 'Chevrolet Malibu', 'Red', 'Small', 2022, 'PLATE-015', 'ACTIVE', 2, 90.44);
+INSERT INTO car (car_id, model, color, size, year, plate_id, status, office_id, price_per_day) VALUES (16, 'Ford Focus', 'White', 'Large', 2020, 'PLATE-016', 'RESERVED', 2, 135.96);
+INSERT INTO car (car_id, model, color, size, year, plate_id, status, office_id, price_per_day) VALUES (17, 'Toyota Corolla', 'Silver', 'Small', 2023, 'PLATE-017', 'RENTED', 1, 140.83);
+INSERT INTO car (car_id, model, color, size, year, plate_id, status, office_id, price_per_day) VALUES (18, 'Chevrolet Malibu', 'Blue', 'Large', 2022, 'PLATE-018', 'RENTED', 5, 70.84);
+INSERT INTO car (car_id, model, color, size, year, plate_id, status, office_id, price_per_day) VALUES (19, 'Honda Civic', 'Red', 'Large', 2022, 'PLATE-019', 'ACTIVE', 4, 95.32);
+INSERT INTO car (car_id, model, color, size, year, plate_id, status, office_id, price_per_day) VALUES (20, 'Toyota Corolla', 'White', 'Medium', 2012, 'PLATE-020', 'RENTED', 5, 56.63);
 
 INSERT INTO admin (admin_id, username, email, password) VALUES (1, 'admin1', 'admin1@admin.com', 'password1');
 INSERT INTO admin (admin_id, username, email, password) VALUES (2, 'admin2', 'admin2@admin.com', 'password2');

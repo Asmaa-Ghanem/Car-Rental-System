@@ -20,3 +20,6 @@ body {
     font-size: 12px;
     padding: 5px 10px;
 }
+footer {
+    height: 50px; /* Set a fixed height */
+}
