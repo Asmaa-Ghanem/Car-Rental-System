@@ -72,7 +72,7 @@ def generate_sql():
     for reservation_id in range(1, 16):
         customer_id = random.randint(1, len(names))
         car_id = random.randint(1, 20)
-        start_date = random_datetime(start_date_range, end_date_range)
+        start_date = random_datetime(start_date_range, end_date_range - timedelta(days=30))
         end_date = random_datetime(start_date + timedelta(days=1), start_date + timedelta(days=30))
         status = random.choice(["CONFIRMED", "CANCELLED", "COMPLETED"])
         payment_amount = round(random.uniform(100.0, 500.0), 2)

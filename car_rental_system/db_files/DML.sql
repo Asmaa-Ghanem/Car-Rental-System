@@ -36,21 +36,21 @@ INSERT INTO customer (customer_id, name, email, phone, address, password) VALUES
 INSERT INTO customer (customer_id, name, email, phone, address, password) VALUES (4, 'Bob Brown', 'bob_brown@example.com', '555-7141', '667 Main St', 'pass4');
 INSERT INTO customer (customer_id, name, email, phone, address, password) VALUES (5, 'Charlie Davis', 'charlie_davis@example.com', '555-6108', '943 Main St', 'pass5');
 
-INSERT INTO reservation (reservation_id, customer_id, car_id, start_date, end_date, status, payment_amount) VALUES (1, 1, 16, '2023-12-03 20:34:36', '2023-11-15 03:45:08', 'COMPLETED', 200.59);
-INSERT INTO reservation (reservation_id, customer_id, car_id, start_date, end_date, status, payment_amount) VALUES (2, 4, 20, '2023-09-28 21:55:18', '2023-08-26 05:23:52', 'CONFIRMED', 483.56);
-INSERT INTO reservation (reservation_id, customer_id, car_id, start_date, end_date, status, payment_amount) VALUES (3, 1, 1, '2023-01-30 16:42:23', '2023-02-21 20:30:55', 'COMPLETED', 229.18);
-INSERT INTO reservation (reservation_id, customer_id, car_id, start_date, end_date, status, payment_amount) VALUES (4, 4, 13, '2023-09-19 11:29:57', '2023-02-11 07:38:03', 'CONFIRMED', 306.06);
-INSERT INTO reservation (reservation_id, customer_id, car_id, start_date, end_date, status, payment_amount) VALUES (5, 1, 4, '2023-04-21 16:03:43', '2023-06-20 07:04:40', 'COMPLETED', 222.95);
-INSERT INTO reservation (reservation_id, customer_id, car_id, start_date, end_date, status, payment_amount) VALUES (6, 2, 8, '2023-08-16 15:46:24', '2023-06-16 08:11:45', 'CANCELLED', 181.07);
-INSERT INTO reservation (reservation_id, customer_id, car_id, start_date, end_date, status, payment_amount) VALUES (7, 5, 18, '2023-06-24 09:23:18', '2023-01-28 00:47:31', 'COMPLETED', 416.9);
-INSERT INTO reservation (reservation_id, customer_id, car_id, start_date, end_date, status, payment_amount) VALUES (8, 3, 8, '2023-01-06 01:38:13', '2023-08-29 02:14:12', 'COMPLETED', 367.66);
-INSERT INTO reservation (reservation_id, customer_id, car_id, start_date, end_date, status, payment_amount) VALUES (9, 5, 11, '2023-09-30 10:30:06', '2023-04-29 20:36:56', 'COMPLETED', 394.14);
-INSERT INTO reservation (reservation_id, customer_id, car_id, start_date, end_date, status, payment_amount) VALUES (10, 4, 20, '2023-03-10 16:02:53', '2023-01-30 02:59:19', 'COMPLETED', 110.04);
-INSERT INTO reservation (reservation_id, customer_id, car_id, start_date, end_date, status, payment_amount) VALUES (11, 1, 18, '2023-05-27 19:59:43', '2023-10-17 12:02:34', 'CONFIRMED', 307.27);
-INSERT INTO reservation (reservation_id, customer_id, car_id, start_date, end_date, status, payment_amount) VALUES (12, 2, 19, '2023-04-15 07:23:47', '2023-02-17 14:53:19', 'COMPLETED', 221.77);
-INSERT INTO reservation (reservation_id, customer_id, car_id, start_date, end_date, status, payment_amount) VALUES (13, 3, 13, '2023-08-06 00:32:44', '2023-05-03 19:42:31', 'COMPLETED', 217.75);
-INSERT INTO reservation (reservation_id, customer_id, car_id, start_date, end_date, status, payment_amount) VALUES (14, 1, 19, '2023-10-15 00:36:54', '2023-11-19 02:37:54', 'CANCELLED', 446.6);
-INSERT INTO reservation (reservation_id, customer_id, car_id, start_date, end_date, status, payment_amount) VALUES (15, 1, 6, '2023-10-19 04:59:23', '2023-12-12 19:36:35', 'COMPLETED', 263.66);
+INSERT INTO reservation (reservation_id, customer_id, car_id, start_date, end_date, status, payment_amount) VALUES (1, 2, 7, '2023-07-21 04:22:34', '2023-08-08 07:31:02', 'COMPLETED', 109.62);
+INSERT INTO reservation (reservation_id, customer_id, car_id, start_date, end_date, status, payment_amount) VALUES (2, 5, 18, '2023-09-16 02:55:59', '2023-10-09 22:19:24', 'CONFIRMED', 137.54);
+INSERT INTO reservation (reservation_id, customer_id, car_id, start_date, end_date, status, payment_amount) VALUES (3, 4, 5, '2023-11-26 11:53:02', '2023-11-28 05:39:57', 'CONFIRMED', 254.92);
+INSERT INTO reservation (reservation_id, customer_id, car_id, start_date, end_date, status, payment_amount) VALUES (4, 4, 16, '2023-10-23 05:45:16', '2023-11-17 08:32:22', 'COMPLETED', 421.01);
+INSERT INTO reservation (reservation_id, customer_id, car_id, start_date, end_date, status, payment_amount) VALUES (5, 4, 4, '2023-01-10 08:30:16', '2023-01-16 19:41:10', 'CANCELLED', 256.55);
+INSERT INTO reservation (reservation_id, customer_id, car_id, start_date, end_date, status, payment_amount) VALUES (6, 5, 19, '2023-02-18 13:56:54', '2023-03-15 21:16:28', 'CANCELLED', 491.69);
+INSERT INTO reservation (reservation_id, customer_id, car_id, start_date, end_date, status, payment_amount) VALUES (7, 5, 2, '2023-03-13 02:42:59', '2023-04-02 00:26:47', 'COMPLETED', 432.84);
+INSERT INTO reservation (reservation_id, customer_id, car_id, start_date, end_date, status, payment_amount) VALUES (8, 5, 14, '2023-11-10 02:39:47', '2023-11-24 11:53:56', 'COMPLETED', 482.28);
+INSERT INTO reservation (reservation_id, customer_id, car_id, start_date, end_date, status, payment_amount) VALUES (9, 2, 17, '2023-03-23 06:37:48', '2023-04-20 08:35:08', 'CONFIRMED', 212.9);
+INSERT INTO reservation (reservation_id, customer_id, car_id, start_date, end_date, status, payment_amount) VALUES (10, 2, 18, '2023-08-27 16:52:09', '2023-09-09 10:27:13', 'COMPLETED', 156.37);        
+INSERT INTO reservation (reservation_id, customer_id, car_id, start_date, end_date, status, payment_amount) VALUES (11, 4, 4, '2023-06-19 15:42:47', '2023-07-12 13:45:32', 'COMPLETED', 467.11);
+INSERT INTO reservation (reservation_id, customer_id, car_id, start_date, end_date, status, payment_amount) VALUES (12, 5, 8, '2023-02-03 13:21:43', '2023-03-02 08:35:36', 'CANCELLED', 106.89);
+INSERT INTO reservation (reservation_id, customer_id, car_id, start_date, end_date, status, payment_amount) VALUES (13, 2, 7, '2023-01-05 08:49:25', '2023-01-16 01:02:24', 'CANCELLED', 284.61);
+INSERT INTO reservation (reservation_id, customer_id, car_id, start_date, end_date, status, payment_amount) VALUES (14, 1, 5, '2023-08-11 13:39:46', '2023-08-30 06:33:35', 'COMPLETED', 331.81);
+INSERT INTO reservation (reservation_id, customer_id, car_id, start_date, end_date, status, payment_amount) VALUES (15, 3, 17, '2023-03-03 07:09:14', '2023-03-31 23:10:59', 'CONFIRMED', 107.83); 
 
 INSERT INTO payment (payment_id, reservation_id, payment_date, amount) VALUES (1, 1, '2023-07-16 06:52:38', 426.04);
 INSERT INTO payment (payment_id, reservation_id, payment_date, amount) VALUES (2, 2, '2023-02-25 15:56:10', 323.38);
