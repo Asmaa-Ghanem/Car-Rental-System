@@ -21,7 +21,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->fetch();
 
         if ($password === $storedPassword) {
-            echo "Welcome, " . htmlspecialchars($name) . "!";
+            // echo "Welcome, " . htmlspecialchars($name) . "!";
+            header("Location: admin_role.html");
+            exit();
         } else {
             echo "<script>
                     alert('Incorrect password!');
