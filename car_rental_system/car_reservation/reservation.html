@@ -10,25 +10,57 @@
 </head>
 <body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <div class="container">
+      <div class="container">
         <div class="search-bar">
             <form class="d-flex">
                 <!-- Dropdown for Options -->
                 <div class="dropdown me-2">
-                  <button class="btn btn-secondary dropdown-toggle" type="button"
-                    id="searchOptions" data-bs-toggle="dropdown"aria-expanded="false"> Model </button>
-                  <ul class="dropdown-menu" aria-labelledby="searchOptions">
+                  <button class="button btn-secondary dropdown-toggle" type="button"
+                    id="searchModel" data-bs-toggle="dropdown"aria-expanded="false"> Model </button>
+                  <ul class="dropdown-menu" aria-labelledby="searchModel">
                     <li><a class="dropdown-item" href="#">Toyota</a></li>
                     <li><a class="dropdown-item" href="#">Mercedes</a></li>
                     <li><a class="dropdown-item" href="#">Tesla</a></li>
                     <li><a class="dropdown-item" href="#">Chevorlet</a></li>
                     <li><a class="dropdown-item" href="#">Hyundai</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">All Models</a></li>
+                  </ul>
+                </div>
+                <div class="dropdown-menu-2">
+                  <button class="button btn-secondary dropdown-toggle" type="button"
+                  id="searchColor" data-bs-toggle="dropdown"aria-expanded="false"> Colour </button>
+                  <ul class="dropdown-menu" aria-labelledby="searchColor">
+                    <li><a class="dropdown-item" href="#">Red</a></li>
+                    <li><a class="dropdown-item" href="#">Blue</a></li>
+                    <li><a class="dropdown-item" href="#">Grey</a></li>
+                    <li><a class="dropdown-item" href="#">Black</a></li>
+                    <li><a class="dropdown-item" href="#">White</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">All Colours</a></li>
+                  </ul>
+                </div>
+                <div class="dropdown-menu-3">
+                  <button class="button btn-secondary dropdown-toggle" type="button"
+                  id="searchSize" data-bs-toggle="dropdown"aria-expanded="false"> Size </button>
+                  <ul class="dropdown-menu" aria-labelledby="searchSize">
+                    <li><a class="dropdown-item" href="#">Small</a></li>
+                    <li><a class="dropdown-item" href="#">Medium</a></li>
+                    <li><a class="dropdown-item" href="#">Large</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">All Sizes</a></li>
                   </ul>
                 </div>
                 <input type="text" class="form-control me-2" placeholder="Search..." aria-label="Search">
                 <button type="submit" class="btn btn-primary">Search</button>
               </form>
+              <div class="range-input">
+                <input type="range" class="min-range" min="0.0" max="50000.0" value="2500" step="100">
+                <input type="range" class="max-range" min="0.0" max="50000.0" value="8500" step="100">
+              </div>
+      </div>
     </div>
     <h1>Choose your car</h1>
+    <script src="reservation.js"></script>
 </body>
 </html>
