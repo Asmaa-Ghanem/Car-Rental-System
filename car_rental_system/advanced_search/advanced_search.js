@@ -36,7 +36,12 @@ document.getElementById('searchForm').addEventListener('submit', async (e) => {
                 <th>Address</th>
                 <th>Reservation Start</th>
                 <th>Reservation End</th>
-                <th>Reservation Payment</th>
+                <th>Pickup ID</th>
+                <th>Pickup Date</th>
+                <th>Pickup Location ID</th>
+                <th>Return ID</th>
+                <th>Return Date</th>
+                <th>Return Location ID</th>
             </tr>
         </thead>
         <tbody>
@@ -62,7 +67,12 @@ document.getElementById('searchForm').addEventListener('submit', async (e) => {
             <td>${row.customer_address}</td>
             <td>${row.reservation_start}</td>
             <td>${row.reservation_end}</td>
-            <td>${row.reservation_payment_amount}</td>
+            <td>${row.pickup_id}</td>
+            <td>${row.pickup_date}</td>
+            <td>${row.pickup_location_id}</td>
+            <td>${row.return_id}</td>
+            <td>${row.return_date}</td>
+            <td>${row.return_location_id}</td>
         `;
         tbody.appendChild(tr);
     });
