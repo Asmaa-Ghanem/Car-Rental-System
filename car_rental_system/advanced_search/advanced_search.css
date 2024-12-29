@@ -1,0 +1,8 @@
+table, thead, th, td{
+    border: 1px solid;
+    border-width: 2px;
+    border-color: black !important;
+}
+thead {
+    background-color: #a27b5c;
+}
