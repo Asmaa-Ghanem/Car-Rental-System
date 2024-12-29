@@ -40,7 +40,6 @@ CREATE TABLE reservation(
     car_id INT NOT NULL,
     start_date DATETIME,
     end_date DATETIME,
-    payment_amount DECIMAL(10, 2),
     PRIMARY KEY(reservation_id)
 );
 
@@ -62,6 +61,22 @@ CREATE TABLE payment(
     PRIMARY KEY(payment_id)
 );
 
+CREATE TABLE pickup (
+    pickup_id INT AUTO_INCREMENT,
+    reservation_id INT NOT NULL,
+    pickup_date DATETIME NOT NULL,
+    pickup_location_id INT NOT NULL,
+    PRIMARY KEY(pickup_id)
+);
+
+CREATE TABLE `return` (
+    return_id INT AUTO_INCREMENT,
+    reservation_id INT NOT NULL,
+    return_date DATETIME NOT NULL,
+    return_location_id INT NOT NULL,
+    PRIMARY KEY(return_id)
+);
+
 ALTER TABLE car
 ADD CONSTRAINT fk_car_office
 FOREIGN KEY(office_id) REFERENCES office(office_id);
@@ -78,3 +93,18 @@ ALTER TABLE payment
 ADD CONSTRAINT fk_payment_reservation
 FOREIGN KEY(reservation_id) REFERENCES reservation(reservation_id);
 
+ALTER TABLE pickup
+ADD CONSTRAINT fk_pickup_reservation
+FOREIGN KEY(reservation_id) REFERENCES reservation(reservation_id);
+
+ALTER TABLE pickup
+ADD CONSTRAINT fk_pickup_office
+FOREIGN KEY(pickup_location_id) REFERENCES office(office_id);
+
+ALTER TABLE `return`
+ADD CONSTRAINT fk_return_reservation
+FOREIGN KEY(reservation_id) REFERENCES reservation(reservation_id);
+
+ALTER TABLE `return`
+ADD CONSTRAINT fk_return_office
+FOREIGN KEY(return_location_id) REFERENCES office(office_id);

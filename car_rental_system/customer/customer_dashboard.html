@@ -20,7 +20,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="../customer_registration/login.html">Log In</a>
                     </li>
                     <li class="nav-item">
@@ -31,33 +31,20 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="admin/admin_login.html">Admin</a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>
     </header>
-
+    <br>
     <section id="about" class="mt-5">
-        <h2>Welcome, </h2>
+        <h2>Welcome </h2>
         <p>Search for your next ride across the country you are in!</p>
     </section>
 
-    <section id="search-bar">
-        <form class="d-flex">
+    <section id="search-bar" class="search-bar">
+        <form class="d-flex" action="customer_dashboard.php" method="POST">
             <!-- Dropdown for Options -->
-            <div class="dropdown me-2">
-              <button class="button btn-secondary dropdown-toggle" type="button"
-                id="searchModel" data-bs-toggle="dropdown"aria-expanded="false"> Model </button>
-              <ul class="dropdown-menu" aria-labelledby="searchModel">
-                <li><a class="dropdown-item" href="#">Toyota</a></li>
-                <li><a class="dropdown-item" href="#">Mercedes</a></li>
-                <li><a class="dropdown-item" href="#">Tesla</a></li>
-                <li><a class="dropdown-item" href="#">Chevorlet</a></li>
-                <li><a class="dropdown-item" href="#">Hyundai</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">All Models</a></li>
-              </ul>
-            </div>
             <div class="dropdown-menu-2">
               <button class="button btn-secondary dropdown-toggle" type="button"
               id="searchColor" data-bs-toggle="dropdown"aria-expanded="false"> Colour </button>
@@ -82,11 +69,24 @@
                 <li><a class="dropdown-item" href="#">All Sizes</a></li>
               </ul>
             </div>
-            <input type="text" class="form-control me-2" placeholder="Search..." aria-label="Search">
+            <div class="dropdown me-2">
+                <button class="button btn-secondary dropdown-toggle" type="button"
+                  id="searchModel" data-bs-toggle="dropdown"aria-expanded="false"> Model </button>
+                <ul class="dropdown-menu" aria-labelledby="searchModel">
+                  <li><a class="dropdown-item" href="#">Toyota</a></li>
+                  <li><a class="dropdown-item" href="#">Mercedes</a></li>
+                  <li><a class="dropdown-item" href="#">Tesla</a></li>
+                  <li><a class="dropdown-item" href="#">Chevorlet</a></li>
+                  <li><a class="dropdown-item" href="#">Hyundai</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">All Models</a></li>
+                </ul>
+              </div>
+            <input type="text" class="search-space" placeholder="Add Model descriptors.." aria-label="Search">
             <button type="submit" class="btn btn-primary">Search</button>
           </form>
           <br>
-        
+        </section>
           <div class="price-input-container">
                 <div class="price-input">
                     <div class="price-field">
@@ -107,7 +107,7 @@
                 <input type="range" class="min-range" min="0" max="50000" value="2500" step="100">
                 <input type="range" class="max-range" min="0" max="50000" value="8500" step="100">
               </div>
-    </section>
+    
 
     <section> 
         <!-- add section for customer summary of previous reservs -->

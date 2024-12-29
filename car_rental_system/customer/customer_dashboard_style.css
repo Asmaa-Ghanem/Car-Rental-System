@@ -1,22 +1,30 @@
 
-/* search-bar{
+.search-bar{
     background: #fff;
-    width: 200%;
+    width: 100%;
     max-width: 1000px;
     display: flex;
     padding: 3px;
     border-radius: 4px;
     align-items:center ;
-} */
+}
 
 .range-control{
     position: relative;
     display: flex;
+    
     justify-content: space-between;
 }
 
+.d-flex{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+
 .price-input-container {
-    width: 100%;
+    width: 50%;
 }
 
 .price-input .price-field {
@@ -34,7 +42,6 @@
     flex: 1;
     height: 35px;
     font-size: 15px;
-    font-family: "DM Sans", sans-serif;
     border-radius: 9px;
     text-align: center;
     border: 0px;
@@ -42,7 +49,7 @@
 }
 
 .price-input {
-    width: 100%;
+    width: 50%;
     font-size: 19px;
     color: #555;
 }
@@ -55,7 +62,7 @@ input::-webkit-inner-spin-button {
 }
 
 .slider-container {
-    width: 100%;
+    width: 50%;
 }
 
 .slider-container {
@@ -66,7 +73,7 @@ input::-webkit-inner-spin-button {
 }
 
 .slider-container .price-slider {
-    height: 100%;
+    height: 50%;
     left: 25%;
     right: 15%;
     position: absolute;
@@ -79,7 +86,7 @@ input::-webkit-inner-spin-button {
 
 .range-input input {
     position: absolute;
-    width: 100%;
+    width: 50%;
     height: 5px;
     background: none;
     top: -5px;

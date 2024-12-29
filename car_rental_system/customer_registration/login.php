@@ -1,5 +1,4 @@
 <?php
-ob_start();
 $errorMessage = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -22,9 +21,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->fetch();
 
         if ($password === $storedPassword) {
-            //echo "Welcome, " . htmlspecialchars($name) . "!";
-            header("Location: ../customer/customer_dashboard.html");
-            exit();
+            echo "Welcome, " . htmlspecialchars($name) . "!";
+            echo "<script>
+                    window.location.href = '../customer/customer_dashboard.html';
+                    </script>";
         } else {
             echo "<script>
                     alert('Incorrect password!');
@@ -41,5 +41,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->close();
     $conn->close();
 }
-ob_end_flush();
 ?>
