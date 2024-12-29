@@ -69,9 +69,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 break;
 
             case 'daily_payments':
-                $query = "SELECT p.*, r.car_id, r.customer_id, p.*, re.* FROM payment p 
+                $query = "SELECT p.*, r.car_id, r.customer_id, pi.*, re.* FROM payment p 
                           JOIN reservation r ON p.reservation_id = r.reservation_id
-                          JOIN pickup p ON r.reservation_id = p.reservation_id
+                          JOIN pickup pi ON r.reservation_id = pi.reservation_id
                           JOIN `return` re ON r.reservation_id = re.reservation_id 
                           WHERE p.payment_date BETWEEN ? AND ?";
                 $stmt = $conn->prepare($query);
