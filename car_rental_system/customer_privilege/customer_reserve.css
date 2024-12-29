@@ -1,0 +1,25 @@
+body .container button {
+    width: 20%;
+    padding: 10px;
+    font-size: 22px;
+    background-color: #246165;
+    color: #060606;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+body {
+    font-size: 20px;
+}
+
+.btn {
+    width: 10%;
+    padding: 10px;
+    font-size: 18px;
+    background-color: #3f4e4f;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
