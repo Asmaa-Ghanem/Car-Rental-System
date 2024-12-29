@@ -23,7 +23,7 @@ h2 {
 
 form {
     background: #ffffff;
-    padding: 30px;
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
     width: 100%;
@@ -68,9 +68,6 @@ button[type="submit"]:hover {
     flex-direction: column;
 }
 
-
-/* @media (max-width: 576px) {
-    form {
-        padding: 20px;
-    }
-} */
+.header-container {
+    margin-top: 0%;
+}
