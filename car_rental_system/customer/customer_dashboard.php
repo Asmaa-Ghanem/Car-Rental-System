@@ -50,9 +50,13 @@ if ($result->num_rows > 0) {
                 <td>{$row['plate_id']}</td>
                 <td>{$row['status']}</td>
                 <td>{$row['price_per_day']}</td>";
-        if ($row['status'] == 'ACTIVE') {
-            echo "<td><button onclick=\"reserveCar({$row['car_id']})\">Reserve</button></td>";
-        } else {
+        if ($row['status'] === 'ACTIVE') {
+            echo "<td>
+                    <form action='reservation.html' method='GET'>
+                        <input type='hidden' name='car_id' value='{$row['car_id']}'>
+                        <button type='submit'>Reserve</button>
+                    </form>
+                    </td>";} else {
             echo "<td>Not Available</td>";
         }
         echo "</tr>";
