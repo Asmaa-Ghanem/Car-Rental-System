@@ -9,6 +9,32 @@
     <link rel="stylesheet" href="reports_styles.css">
 </head>
 <body>
+    <header class=" navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../home.html">CarQuest</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../customer_registration/login.html">Log In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../customer_registration/signup.html">Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <!-- href="#search" -->
+                        <a class="nav-link" href="../search.html">Search</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../admin/admin_login.html">Admin</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
     <div class="container mt-4">
         <h2>CarQuest Reports</h2>
 
@@ -49,13 +75,14 @@
 
             <button type="submit" class="btn-primary">Generate Report</button>
         </form>
-
+        
         <div id="reportResults" class="table-responsive">
             <table class="table table-bordered">
                 <thead id="reportHeader"></thead>
                 <tbody id="reportBody"></tbody>
             </table>
         </div>
+        <button type="button" class="btn-primary return-admin" onclick="window.location.href='../admin/admin_role.html';">Return to Admin Dashboard</button>
     </div>
     <script src="reports.js"></script>
 </body>

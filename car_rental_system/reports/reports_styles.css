@@ -8,3 +8,6 @@ table, thead, td{
 thead {
     background-color: #a27b5c;
 }
+#reportResults {
+    margin-bottom: auto;
+}
