@@ -3,10 +3,9 @@
 body, html {
     height: 100%;
     margin: 0;
-    display: flex;
+    display: block;
     flex-direction: column;
 }
-
 main, header, footer {
     width: 100%;
 }
