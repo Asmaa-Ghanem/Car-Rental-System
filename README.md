@@ -41,8 +41,8 @@ Home page containing an about section and contact info, and a call-to-action sea
 ![admin](readme-assets/admin-login.png)
 
 ### Admin Dashboard
+![dashboard](readme-assets/dashboard.png)
 
-'''main page to be added'''
 
 1. Car Management: Admins can add, or update cars.
 
@@ -53,8 +53,17 @@ Home page containing an about section and contact info, and a call-to-action sea
 ![adv search](readme-assets/adv-s-2.png)
 
 3. Reports Generation
-''''''
+- 5 types of reports can be generated
+    1. Reservations within a period
+    2. Reservations of a specific car
+    3. Status of all cars on a specific days
+    4. Reservations of a specific customer
+    5. Daily Payments
 
+![reports-types](readme-assets/reports-types.png)
+
+Example
+![reports](readme-assets/reports.png)
 
 
 ### Frontend Design System
