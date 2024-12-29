@@ -1,0 +1,13 @@
+table, thead, td{
+    border: 2px solid;
+    border-color: black !important;
+}
+thead {
+    background-color: #a27b5c;
+}
+#reportResults {
+    margin-bottom: auto;
+}
+.container{
+    margin-bottom: 190px !important;
+}

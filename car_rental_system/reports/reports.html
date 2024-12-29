@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="reports_styles.css">
+</head>
+<body>
+    <header class=" navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../home.html">CarQuest</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../customer_registration/login.html">Log In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../customer_registration/signup.html">Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <!-- href="#search" -->
+                        <a class="nav-link" href="../search.html">Search</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../admin/admin_login.html">Admin</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="container mt-4">
+        <h2>CarQuest Reports</h2>
+
+        <form id="reportForm" class="mb-4">
+            <div class="mb-3">
+                <label for="reportType" class="form-label">Report Type</label>
+                <select id="reportType" class="form-select" required>
+                    <option value="">Select a Report</option>
+                    <option value="reservations_period">Reservations within a Period</option>
+                    <option value="reservations_car">Reservations of a Specific Car</option>
+                    <option value="car_status">Status of All Cars on a Specific Day</option>
+                    <option value="reservations_customer">Reservations of a Specific Customer</option>
+                    <option value="daily_payments">Daily Payments</option>
+                </select>
+            </div>
+
+            <div class="row" id="dateFields">
+                <div class="col-md-6 mb-3" id="startDateField">
+                    <label for="startDate" class="form-label">Start Date</label>
+                    <input type="date" id="startDate" class="form-control" value="2003-04-20">
+                </div>
+                <div class="col-md-6 mb-3" id="endDateField">
+                    <label for="endDate" class="form-label">End Date</label>
+                    <input type="date" id="endDate" class="form-control">
+                </div>
+            </div>
+
+            <div id="specificFilters" class="mb-3">
+                <div id="carIdField" class="d-none">
+                    <label for="carId" class="form-label">Car ID</label>
+                    <input type="number" id="carId" class="form-control">
+                </div>
+                <div id="customerIdField" class="d-none">
+                    <label for="customerId" class="form-label">Customer ID</label>
+                    <input type="number" id="customerId" class="form-control">
+                </div>
+            </div>
+
+            <button type="submit" class="btn-primary">Generate Report</button>
+        </form>
+        
+        <div id="reportResults" class="table-responsive">
+            <table class="table table-bordered">
+                <thead id="reportHeader"></thead>
+                <tbody id="reportBody"></tbody>
+            </table>
+        </div>
+        <button type="button" class="btn-primary return-admin" onclick="window.location.href='../admin/admin_role.html';">Return to Admin Dashboard</button>
+    </div>
+    <footer class="text-white text-center p-3 mt-5">
+        <p>&copy; 2024 CarQuest. All rights reserved.</p>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"></script>
+    <script src="reports.js"></script>
+</body>
+</html>
