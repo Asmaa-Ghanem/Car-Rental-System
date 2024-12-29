@@ -16,10 +16,13 @@ CarQuest is a car rental system website, that automates the car reservation proc
 ## System Design:
 ## Database Design
 ### Entity Relationship Diagram (ERD)
-[mo2aqqatan](README.md) ![mo2aqqatan](readme-assets/erd.png)
+![erd](readme-assets/erd.jpg)
 
 ### Schema
-[mo2aqqatan](README.md) ![mo2aqqatan](readme-assets/schema.png)
+![schema](readme-assets/schema.jpg)
+
+
+.
 
 
 
@@ -38,6 +41,7 @@ Home page containing an about section and contact info, and a call-to-action sea
 ![login](readme-assets/login.png)
 
 3. Admin Login
+
 ![admin](readme-assets/admin-login.png)
 
 ### Admin Dashboard
