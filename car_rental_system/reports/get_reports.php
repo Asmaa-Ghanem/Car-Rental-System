@@ -13,17 +13,21 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     try {
         switch ($reportType) {
             case 'reservations_period':
-                $query = "SELECT r.*, c.model, c.plate_id, cu.name, cu.email FROM reservation r 
+                $query = "SELECT r.*, c.model, c.plate_id, cu.name, cu.email, p.*, re.* FROM reservation r 
                           JOIN car c ON r.car_id = c.car_id 
                           JOIN customer cu ON r.customer_id = cu.customer_id 
+                          JOIN pickup p ON r.reservation_id = p.reservation_id
+                          JOIN `return` re ON r.reservation_id = re.reservation_id
                           WHERE r.start_date >= ? AND r.end_date <= ?";
                 $stmt = $conn->prepare($query);
                 $stmt->bind_param('ss', $startDate, $endDate);
                 break;
 
             case 'reservations_car':
-                $query = "SELECT r.*, c.model, c.plate_id FROM reservation r 
-                          JOIN car c ON r.car_id = c.car_id 
+                $query = "SELECT r.*, c.model, c.plate_id, p.*, re.* FROM reservation r 
+                          JOIN car c ON r.car_id = c.car_id
+                          JOIN pickup p ON r.reservation_id = p.reservation_id
+                          JOIN `return` re ON r.reservation_id = re.reservation_id 
                           WHERE r.car_id = ? AND r.start_date >= ? AND r.end_date <= ?";
                 $stmt = $conn->prepare($query);
                 $stmt->bind_param('iss', $carId, $startDate, $endDate);
@@ -54,17 +58,21 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             
 
             case 'reservations_customer':
-                $query = "SELECT r.*, c.model, c.plate_id, cu.name, cu.email, cu.phone, cu.address FROM reservation r 
+                $query = "SELECT r.*, c.model, c.plate_id, cu.name, cu.email, cu.phone, cu.address, p.*, re.* FROM reservation r 
                 JOIN car c ON r.car_id = c.car_id 
                 JOIN customer cu ON r.customer_id = cu.customer_id 
+                JOIN pickup p ON r.reservation_id = p.reservation_id
+                JOIN `return` re ON r.reservation_id = re.reservation_id
                 WHERE r.customer_id = ?";
                 $stmt = $conn->prepare($query);
                 $stmt->bind_param('i', $customerId);
                 break;
 
             case 'daily_payments':
-                $query = "SELECT p.*, r.car_id, r.customer_id FROM payment p 
-                          JOIN reservation r ON p.reservation_id = r.reservation_id 
+                $query = "SELECT p.*, r.car_id, r.customer_id, p.*, re.* FROM payment p 
+                          JOIN reservation r ON p.reservation_id = r.reservation_id
+                          JOIN pickup p ON r.reservation_id = p.reservation_id
+                          JOIN `return` re ON r.reservation_id = re.reservation_id 
                           WHERE p.payment_date BETWEEN ? AND ?";
                 $stmt = $conn->prepare($query);
                 $stmt->bind_param('ss', $startDate, $endDate);
