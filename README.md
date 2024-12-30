@@ -22,27 +22,42 @@ CarQuest is a car rental system website, that automates the car reservation proc
 ![schema](readme-assets/schema.jpg)
 
 
-.
+
 
 
 
 ## User Interface
 ### Home Page
+Home page containing an about section, contact info, and a call-to-action search button
 ![home page](readme-assets/home.png)
-Home page containing an about section and contact info, and a call-to-action search button
+
 
 ### Registration
 1. Customer Signup
 
-![signup](readme-assets/signup.png)
+<!-- ![signup](readme-assets/signup.png) -->
 
+<div style="text-align: center;">
+    <img src="readme-assets/signup.png" width="400">
+</div>
 2. Customer Login
+
+<div style="text-align: center;">
+    <img src="readme-assets/login.png" width="400">
+</div>
+3. Admin Login
+
+<div style="text-align: center;">
+    <img src="readme-assets/admin-login.png" width="400">
+</div>
+
+<!-- 2. Customer Login
 
 ![login](readme-assets/login.png)
 
 3. Admin Login
 
-![admin](readme-assets/admin-login.png)
+![admin](readme-assets/admin-login.png) -->
 
 ### Admin Dashboard
 ![dashboard](readme-assets/dashboard.png)
@@ -70,7 +85,30 @@ Example
 ![reports](readme-assets/reports.png)
 
 
-### Frontend Design System
+### Customer Search
+Search by any of the car specs
+![search](readme-assets/search.png)
+
+### Customer Reservation
+1. Reserve your car
+
+![res1](readme-assets/res1.png)
+
+2. Choose pick up date and location
+
+![res2](readme-assets/res2.png)
+
+3. Return after rental
+
+![res3](readme-assets/res3.png)
+
+4. Pay via card
+
+![res4](readme-assets/res4.png)
+
+--------------------------------
+
+### Basic Design System
 1. Font type: System UI Stack
 2. Color Palette:
     - bg color: #E6DFCC
